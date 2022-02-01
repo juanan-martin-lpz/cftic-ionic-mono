@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+h1 {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+button {
+    margin-left: 1.5rem;
+}
+
+label {
+    margin-right: 1rem;
+}
+
+.contenedor {
+    width: 500px;
+}
+
+.center {
+    margin: 0 auto;
+}
