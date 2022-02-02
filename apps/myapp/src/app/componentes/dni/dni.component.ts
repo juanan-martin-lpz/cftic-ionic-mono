@@ -89,6 +89,14 @@ export class DniComponent implements OnInit {
     return (this.letras[indice] == this.letra(dni)) ? true : false;
   }
 
+  clearUI() {
+    this.showError = false;
+    this.mensajeError = "";
+
+    this.dni = "";
+    this.dniok = false;
+
+  }
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
 
