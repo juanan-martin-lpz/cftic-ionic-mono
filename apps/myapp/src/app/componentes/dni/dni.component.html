@@ -1,10 +1,11 @@
 <div class="contenedor center">
 
-    <h1 class="center">Calculo de letra del D.N.I.</h1>
-    <form class="center">
-        <label for="dni">DNI</label>
-        <input type="text" id="dni" name="dni">
-        <button onclick="comprobarDni(event)">Comprobar</button>
-    </form>
+    <h1>Calculo de letra del D.N.I.</h1>
+    <label for="dni">DNI</label>
+    <input [(ngModel)]="dni" type="text" id="dni" name="dni">
+    <button (click)="comprobarDni()">Comprobar</button>
 
+    <div *ngIf="this.showError">
+        <h3>{{mensajeError}}</h3>
+    </div>
 </div>

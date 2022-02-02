@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'myapp-dni',
   templateUrl: './dni.component.html',
@@ -7,17 +6,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DniComponent implements OnInit {
 
-  constructor() { }
+  public dni: string;
+  public dniok: boolean;
+  public mensajeError: string;
+  public showError: boolean;
 
-  // Arrays varios
-  private letras: string = "TRWAGMYFPDXBNJZSQVHLCKE";
-  private letrasExt: string = "XYZ";
-
-  // Obtiene la letra del dni pasado. El ultimo digito mas bien
-  private letra(dni : string): number {
-    return parseInt(dni[dni.length - 1]);
+  constructor() {
+    this.dni = "";
+    this.dniok = false;
+    this.mensajeError = "";
+    this.showError = false;
   }
 
+  // Arrays varios
+  private letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+  private letrasExt = "XYZ";
+
+  // Obtiene la letra del dni pasado. El ultimo digito mas bien
+  private letra(dni : string): string {
+    return dni[dni.length - 1];
+  }
+
+  // Obtiene el numero sin letra. Mas bien todo menos el ultimo digito
+  numero(dni: string): number {
+    return parseInt(dni.substring(0, dni.length - 1));
+  }
 
   // Validamos si el dni pertenece a extranjero
   private validExtFormat(dni : string): boolean {
@@ -36,44 +49,48 @@ export class DniComponent implements OnInit {
 
   }
 
-  comprobarDni(e: any): void {
-
-    e.preventDefault();
-
-
-    // Obtenemos dni
-    //let dni = obtenerDni();
-
-    let dni = "1234567";
+  public comprobarDni(): void {
 
     // Comprobar nacional o extranjero
     // Extranjero
-    let finaldni = this.validExtFormat(dni) ? this.substituteExt(dni) : dni;
+    const finaldni = this.validExtFormat(this.dni) ? this.substituteExt(this.dni) : this.dni;
+
 
     // Nacional
     if (this.validNacFormat(finaldni)) {
         if (this.validDni(finaldni)) {
             // Mostramos el mensaje
             //console.log("DNI ok");
-            //showMessage("DNI ok");
+            this.dniok = true;
+            this.showMessage("DNI ok");
         } else {
             // Mostramos error
             //console.log("Dni error");
-            //showMessage("DNI incorrecto");
+            this.dniok = false;
+            this.showMessage("DNI incorrecto");
         }
     } else {
         //console.log("Error de formato");
-        //showMessage("Error en el formato del DNI");
+        this.dniok = false;
+        this.showMessage("Error en el formato del DNI");
     }
   }
+
+  showMessage(msg: string): void {
+    this.showError = true;
+    this.mensajeError = msg;
+
+  }
+
   // Validamos la validez del dni pasado
   validDni(dni: string): boolean {
 
-    let indice = numero(dni) % 23;
-    return (letras[indice] == letra(dni)) ? true : false;
+    const indice = this.numero(dni) % 23;
+    return (this.letras[indice] == this.letra(dni)) ? true : false;
   }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
+
   }
 }

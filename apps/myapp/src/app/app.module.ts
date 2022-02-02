@@ -6,6 +6,8 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 
 import { PresentacionComponent } from './presentacion/presentacion.component';
 import { DniComponent } from './componentes/dni/dni.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ AppComponent,
@@ -13,7 +15,9 @@ import { DniComponent } from './componentes/dni/dni.component';
                   PresentacionComponent,
                   DniComponent
                 ],
-  imports: [BrowserModule],
+  imports: [BrowserModule,
+            FormsModule,
+            RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })
