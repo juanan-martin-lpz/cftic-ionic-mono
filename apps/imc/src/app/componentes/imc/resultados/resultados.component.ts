@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'myapp-resultados',
+  selector: 'imc-resultados',
   templateUrl: './resultados.component.html',
   styleUrls: ['./resultados.component.css']
 })

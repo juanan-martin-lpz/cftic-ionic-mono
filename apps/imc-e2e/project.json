@@ -1,0 +1,28 @@
+{
+  "root": "apps/imc-e2e",
+  "sourceRoot": "apps/imc-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/imc-e2e/cypress.json",
+        "devServerTarget": "imc:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "imc:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/imc-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["imc"]
+}

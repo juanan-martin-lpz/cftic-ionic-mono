@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tipologia, Resultado } from './tipos';
 
 @Component({
-  selector: 'myapp-imc',
+  selector: 'imc-imc',
   templateUrl: './imc.component.html',
   styleUrls: ['./imc.component.css']
 })

@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "imc": "apps/imc",
+    "imc-e2e": "apps/imc-e2e",
     "myapp": "apps/myapp",
     "myapp-e2e": "apps/myapp-e2e",
     "sample": "apps/sample",

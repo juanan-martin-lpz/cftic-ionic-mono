@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Imc, Resultado, Tipologia } from '../tipos';
 
 @Component({
-  selector: 'myapp-entrada-datos',
+  selector: 'imc-entrada-datos',
   templateUrl: './entrada-datos.component.html',
   styleUrls: ['./entrada-datos.component.css']
 })
