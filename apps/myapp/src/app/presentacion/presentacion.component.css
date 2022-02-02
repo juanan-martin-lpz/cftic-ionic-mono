@@ -1,13 +1,13 @@
 h1 {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 h1,
 h3 {
-    text-align: center;
+  text-align: center;
 }
 
 .center {
-    width: 800px;
-    margin: 0 auto;
+  width: 800px;
+  margin: 0 auto;
 }

@@ -4,10 +4,9 @@ import { Imc, Resultado, Tipologia } from '../tipos';
 @Component({
   selector: 'imc-entrada-datos',
   templateUrl: './entrada-datos.component.html',
-  styleUrls: ['./entrada-datos.component.css']
+  styleUrls: ['./entrada-datos.component.css'],
 })
 export class EntradaDatosComponent implements OnInit {
-
   @Output()
   public resultadoEvent = new EventEmitter<Resultado>();
 
@@ -17,9 +16,7 @@ export class EntradaDatosComponent implements OnInit {
   private imc: Imc | null;
   private resultado: Resultado;
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   constructor() {
     this.peso = 0;
@@ -29,9 +26,7 @@ export class EntradaDatosComponent implements OnInit {
     this.resultado = { imc: 0.0, tipologia: Tipologia.UNNASIGNED };
   }
 
-
   calcularIMC() {
-
     this.imc = new Imc(this.peso, this.altura / 100);
 
     this.resultado = this.imc.calcularIMC();
@@ -42,5 +37,4 @@ export class EntradaDatosComponent implements OnInit {
   emitResultado(): void {
     this.resultadoEvent.emit(this.resultado);
   }
-
 }

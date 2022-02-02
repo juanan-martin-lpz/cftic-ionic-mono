@@ -1,27 +1,31 @@
-
 // Tipos usados por los componentes
 
 // Funciones generales
-export function between(a: number, b: number, valor: number) { return valor >= a && valor < b; }
-export function greater(a: number, valor: number) { return valor > a; }
-export function lesser(a: number, valor: number) { return !greater(a, valor); }
+export function between(a: number, b: number, valor: number) {
+  return valor >= a && valor < b;
+}
+export function greater(a: number, valor: number) {
+  return valor > a;
+}
+export function lesser(a: number, valor: number) {
+  return !greater(a, valor);
+}
 
 export enum Tipologia {
-  UNNASIGNED = "Sin Asignar",
-  DESNUTRIDO = "Desnutrido",
-  DELGADO = "Delgado",
-  IDEAL = "Ideal",
-  SOBREPESO = "Sobrepeso",
-  OBESO = "Obeso"
+  UNNASIGNED = 'Sin Asignar',
+  DESNUTRIDO = 'Desnutrido',
+  DELGADO = 'Delgado',
+  IDEAL = 'Ideal',
+  SOBREPESO = 'Sobrepeso',
+  OBESO = 'Obeso',
 }
 
 export interface Resultado {
   imc: number;
-  tipologia: Tipologia
+  tipologia: Tipologia;
 }
 
 export class Imc {
-
   public imc: number;
   public tipologia: Tipologia;
 
@@ -35,9 +39,8 @@ export class Imc {
     this.imc = this.peso / (this.altura * this.altura);
   }
 
-   // Obtiene el texto correspodiente al valor del imc
-   obtenerTipologia(): void {
-
+  // Obtiene el texto correspodiente al valor del imc
+  obtenerTipologia(): void {
     let result: Tipologia = Tipologia.UNNASIGNED;
 
     result = greater(31, this.imc) ? Tipologia.OBESO : result;
@@ -50,14 +53,12 @@ export class Imc {
   }
 
   calcularIMC(): Resultado {
-
     this.obtenerIMC();
-    this.obtenerTipologia()
+    this.obtenerTipologia();
 
     return {
       imc: this.imc,
-      tipologia: this.tipologia
-    }
+      tipologia: this.tipologia,
+    };
   }
-
 }

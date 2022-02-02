@@ -3,19 +3,13 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'imc-resultados',
   templateUrl: './resultados.component.html',
-  styleUrls: ['./resultados.component.css']
+  styleUrls: ['./resultados.component.css'],
 })
 export class ResultadosComponent implements OnInit {
-
   @Input()
   public resultado: any;
 
-  constructor() {
+  constructor() {}
 
-  }
-
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
 }

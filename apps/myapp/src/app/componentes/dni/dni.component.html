@@ -1,11 +1,16 @@
 <div class="contenedor center">
+  <h1>Calculo de letra del D.N.I.</h1>
+  <label for="dni">DNI</label>
+  <input
+    [(ngModel)]="dni"
+    type="text"
+    id="dni"
+    name="dni"
+    (focus)="clearUI()"
+  />
+  <button (click)="comprobarDni()">Comprobar</button>
 
-    <h1>Calculo de letra del D.N.I.</h1>
-    <label for="dni">DNI</label>
-    <input [(ngModel)]="dni" type="text" id="dni" name="dni" (focus)="clearUI()">
-    <button (click)="comprobarDni()">Comprobar</button>
-
-    <div class="contenedor" *ngIf="this.showError">
-        <h3>{{mensajeError}}</h3>
-    </div>
+  <div class="contenedor" *ngIf="this.showError">
+    <h3>{{ mensajeError }}</h3>
+  </div>
 </div>
