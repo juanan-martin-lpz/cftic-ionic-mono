@@ -5,7 +5,7 @@
     <input [(ngModel)]="dni" type="text" id="dni" name="dni">
     <button (click)="comprobarDni()">Comprobar</button>
 
-    <div *ngIf="this.showError">
+    <div class="contenedor" *ngIf="this.showError">
         <h3>{{mensajeError}}</h3>
     </div>
 </div>

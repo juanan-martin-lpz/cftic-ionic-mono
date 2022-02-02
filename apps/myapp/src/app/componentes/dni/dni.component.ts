@@ -19,8 +19,8 @@ export class DniComponent implements OnInit {
   }
 
   // Arrays varios
-  private letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-  private letrasExt = "XYZ";
+  private readonly letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+  private readonly letrasExt = "XYZ";
 
   // Obtiene la letra del dni pasado. El ultimo digito mas bien
   private letra(dni : string): string {
