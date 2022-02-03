@@ -10,6 +10,12 @@ export class EntradaDatosComponent implements OnInit {
   @Output()
   public resultadoEvent = new EventEmitter<Resultado>();
 
+  @Output()
+  public hideResultsEvent = new EventEmitter<boolean>();
+
+  @Output()
+  public showErrorEvent = new EventEmitter<string>();
+
   public peso: number;
   public altura: number;
 
@@ -27,11 +33,33 @@ export class EntradaDatosComponent implements OnInit {
   }
 
   calcularIMC() {
+
+    if (this.peso < 1 ) {
+      this.showError("El peso debe ser mayor que cero");
+      return;
+    }
+
+    if (this.altura < 1 ) {
+      this.showError("La altura debe ser mayor que cero");
+      return;
+    }
+
     this.imc = new Imc(this.peso, this.altura / 100);
 
     this.resultado = this.imc.calcularIMC();
 
     this.emitResultado();
+  }
+
+  hideResults() {
+
+    this.hideResultsEvent.emit(true);
+
+  }
+
+  showError(msg: string): void {
+    console.log("show error : " + msg)
+    this.showErrorEvent.emit(msg);
   }
 
   emitResultado(): void {

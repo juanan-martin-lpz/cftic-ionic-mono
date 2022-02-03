@@ -1,2 +1,3 @@
-<imc-entrada-datos (resultadoEvent)="imcCalculado($event)"></imc-entrada-datos>
-<imc-resultados [resultado]="resultado"></imc-resultados>
+<imc-entrada-datos (hideResultsEvent)="hide()" (showErrorEvent)="mshowError($event)" (resultadoEvent)="imcCalculado($event)"></imc-entrada-datos>
+<imc-resultados *ngIf="showResults" [resultado]="resultado"></imc-resultados>
+<imc-error *ngIf="ashowError" [errMessage]="errorMessage"></imc-error>

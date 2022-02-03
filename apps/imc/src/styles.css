@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 h1 {
     padding-top: 5rem;
     padding-bottom: 2rem;
@@ -21,18 +31,7 @@ label {
     margin: 0 auto;
 }
 
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
-form,
-h1 {
+.form {
     margin: 0 auto;
     width: 30rem;
     padding-bottom: 2rem;

@@ -9,7 +9,18 @@ export class ResultadosComponent implements OnInit {
   @Input()
   public resultado: any;
 
-  constructor() {}
+  public imc_numerico: string;
+  public imc_texto: string;
 
-  ngOnInit(): void {}
+  constructor() {
+    this.imc_numerico = "";
+    this.imc_texto = "";
+  }
+
+  ngOnInit(): void {
+
+    this.imc_numerico = this.resultado.imc.toFixed(2);
+    this.imc_texto = this.resultado.tipologia.toString();
+
+  }
 }
