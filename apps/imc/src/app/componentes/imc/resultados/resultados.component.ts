@@ -13,14 +13,12 @@ export class ResultadosComponent implements OnInit {
   public imc_texto: string;
 
   constructor() {
-    this.imc_numerico = "";
-    this.imc_texto = "";
+    this.imc_numerico = '';
+    this.imc_texto = '';
   }
 
   ngOnInit(): void {
-
     this.imc_numerico = this.resultado.imc.toFixed(2);
     this.imc_texto = this.resultado.tipologia.toString();
-
   }
 }

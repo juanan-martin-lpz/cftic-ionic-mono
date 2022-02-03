@@ -7,7 +7,6 @@ import { Tipologia, Resultado } from './tipos';
   styleUrls: ['./imc.component.css'],
 })
 export class ImcComponent implements OnInit {
-
   public resultado: any;
   public showResults: boolean;
   public ashowError: boolean;
@@ -16,13 +15,12 @@ export class ImcComponent implements OnInit {
   constructor() {
     this.showResults = false;
     this.ashowError = false;
-    this.errorMessage = "";
+    this.errorMessage = '';
   }
 
   ngOnInit(): void {}
 
   mshowError(msg: string): void {
-
     this.ashowError = true;
     this.errorMessage = msg;
   }
@@ -33,9 +31,7 @@ export class ImcComponent implements OnInit {
   }
 
   imcCalculado(r: Resultado): void {
-
     this.resultado = r;
     this.showResults = true;
-
   }
 }

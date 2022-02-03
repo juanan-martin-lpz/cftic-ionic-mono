@@ -33,14 +33,13 @@ export class EntradaDatosComponent implements OnInit {
   }
 
   calcularIMC() {
-
-    if (this.peso < 1 ) {
-      this.showError("El peso debe ser mayor que cero");
+    if (this.peso < 1) {
+      this.showError('El peso debe ser mayor que cero');
       return;
     }
 
-    if (this.altura < 1 ) {
-      this.showError("La altura debe ser mayor que cero");
+    if (this.altura < 1) {
+      this.showError('La altura debe ser mayor que cero');
       return;
     }
 
@@ -52,13 +51,11 @@ export class EntradaDatosComponent implements OnInit {
   }
 
   hideResults() {
-
     this.hideResultsEvent.emit(true);
-
   }
 
   showError(msg: string): void {
-    console.log("show error : " + msg)
+    console.log('show error : ' + msg);
     this.showErrorEvent.emit(msg);
   }
 

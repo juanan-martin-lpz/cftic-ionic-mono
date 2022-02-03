@@ -8,12 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [ AppComponent,
-                  DniComponent
-                ],
-  imports: [BrowserModule,
-            FormsModule,
-            RouterModule],
+  declarations: [AppComponent, DniComponent],
+  imports: [BrowserModule, FormsModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })

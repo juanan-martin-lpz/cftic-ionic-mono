@@ -12,16 +12,15 @@ import { ErrorComponent } from './componentes/imc/error/error.component';
 import { ImagenComponent } from './componentes/imc/imagen/imagen.component';
 
 @NgModule({
-  declarations: [ AppComponent,
-                  ImcComponent,
-                  EntradaDatosComponent,
-                  ResultadosComponent,
-                  ErrorComponent,
-                  ImagenComponent
-                ],
-  imports: [BrowserModule,
-            FormsModule,
-            RouterModule],
+  declarations: [
+    AppComponent,
+    ImcComponent,
+    EntradaDatosComponent,
+    ResultadosComponent,
+    ErrorComponent,
+    ImagenComponent,
+  ],
+  imports: [BrowserModule, FormsModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })

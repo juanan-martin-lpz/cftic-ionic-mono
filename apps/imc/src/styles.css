@@ -1,120 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 h1 {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
 }
 
 button {
-    margin-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 label {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .contenedor {
-    width: 500px;
+  width: 500px;
 }
 
 .center {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .form {
-    margin: 0 auto;
-    width: 30rem;
-    padding-bottom: 2rem;
+  margin: 0 auto;
+  width: 30rem;
+  padding-bottom: 2rem;
 }
 
 h1 {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 hr {
-    margin: 0 auto;
-    width: 75%;
+  margin: 0 auto;
+  width: 75%;
 }
 
 .field {
-    display: grid;
-    grid-template-columns: 5rem 10rem;
-    padding-bottom: 0.5rem;
+  display: grid;
+  grid-template-columns: 5rem 10rem;
+  padding-bottom: 0.5rem;
 }
 
 .field label {
-    grid-column: 1;
+  grid-column: 1;
 }
 
 .field input {
-    grid-column: 2;
+  grid-column: 2;
 }
 
 .resultados {
-    margin: 0 auto;
-    width: 50rem;
+  margin: 0 auto;
+  width: 50rem;
 }
 
 .resultados .textos {
-    margin: 0 auto;
-    width: 30rem;
+  margin: 0 auto;
+  width: 30rem;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 #imagen {
-    margin: 0 auto;
-    position: relative;
-    width: 50rem;
+  margin: 0 auto;
+  position: relative;
+  width: 50rem;
 }
 
 .punto {
-    position: absolute;
-    z-index: 10;
-    background-color: blue;
+  position: absolute;
+  z-index: 10;
+  background-color: blue;
 }
 
 .primero {
-    left: 10%;
-    top: 35%;
+  left: 10%;
+  top: 35%;
 }
 
 .segundo {
-    left: 27%;
-    top: 35%;
+  left: 27%;
+  top: 35%;
 }
 
 .tercero {
-    left: 44%;
-    top: 35%;
+  left: 44%;
+  top: 35%;
 }
 
 .cuarto {
-    left: 63%;
-    top: 35%;
+  left: 63%;
+  top: 35%;
 }
 
 .quinto {
-    left: 83%;
-    top: 35%;
+  left: 83%;
+  top: 35%;
 }
 
 .circulo {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    border: 2px solid transparent;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
 }

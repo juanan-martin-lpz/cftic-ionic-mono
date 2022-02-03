@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'angular-monorepo-root',
+  selector: 'rps-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'rock-paper-scissors';
+  title = 'Piedra, Papel, Tijera';
 }

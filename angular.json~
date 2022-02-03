@@ -1,8 +1,12 @@
 {
   "version": 1,
   "projects": {
+    "imc": "apps/imc",
+    "imc-e2e": "apps/imc-e2e",
     "myapp": "apps/myapp",
     "myapp-e2e": "apps/myapp-e2e",
+    "rock-paper-scissors": "apps/rock-paper-scissors",
+    "rock-paper-scissors-e2e": "apps/rock-paper-scissors-e2e",
     "sample": "apps/sample",
     "sample-e2e": "apps/sample-e2e"
   }

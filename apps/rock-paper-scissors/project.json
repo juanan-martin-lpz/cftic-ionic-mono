@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/rock-paper-scissors",
   "sourceRoot": "apps/rock-paper-scissors/src",
-  "prefix": "angular-monorepo",
+  "prefix": "rps",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
