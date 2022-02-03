@@ -1,0 +1,28 @@
+{
+  "root": "apps/rock-paper-scissors-e2e",
+  "sourceRoot": "apps/rock-paper-scissors-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/rock-paper-scissors-e2e/cypress.json",
+        "devServerTarget": "rock-paper-scissors:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "rock-paper-scissors:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/rock-paper-scissors-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["rock-paper-scissors"]
+}
