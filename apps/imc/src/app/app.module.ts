@@ -9,13 +9,15 @@ import { ImcComponent } from './componentes/imc/imc.component';
 import { EntradaDatosComponent } from './componentes/imc/entrada-datos/entrada-datos.component';
 import { ResultadosComponent } from './componentes/imc/resultados/resultados.component';
 import { ErrorComponent } from './componentes/imc/error/error.component';
+import { ImagenComponent } from './componentes/imc/imagen/imagen.component';
 
 @NgModule({
   declarations: [ AppComponent,
                   ImcComponent,
                   EntradaDatosComponent,
                   ResultadosComponent,
-                  ErrorComponent
+                  ErrorComponent,
+                  ImagenComponent
                 ],
   imports: [BrowserModule,
             FormsModule,
