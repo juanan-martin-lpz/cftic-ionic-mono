@@ -6,10 +6,11 @@ import { ButtonPanelComponent } from './componentes/button-panel/button-panel.co
 import { PlayPanelComponent } from './componentes/play-panel/play-panel.component';
 import { ComputerPlayComponent } from './componentes/computer-play/computer-play.component';
 import { ResultPanelComponent } from './componentes/result-panel/result-panel.component';
-import { ButtonComponent } from './componentes/shared/button/button.component';
+import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
+import { PlayerService } from './servicios/player.service';
 
 @NgModule({
-  declarations: [AppComponent, ButtonPanelComponent, PlayPanelComponent, ComputerPlayComponent, ResultPanelComponent, ButtonComponent],
+  declarations: [AppComponent, ButtonPanelComponent, PlayPanelComponent, ComputerPlayComponent, ResultPanelComponent, CabeceraComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
