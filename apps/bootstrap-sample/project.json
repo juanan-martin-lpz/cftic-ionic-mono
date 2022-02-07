@@ -1,0 +1,100 @@
+{
+    "projectType": "application",
+    "root": "apps/bootstrap-sample",
+    "sourceRoot": "apps/bootstrap-sample/src",
+    "prefix": "angular-monorepo",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/bootstrap-sample",
+                "index": "apps/bootstrap-sample/src/index.html",
+                "main": "apps/bootstrap-sample/src/main.ts",
+                "polyfills": "apps/bootstrap-sample/src/polyfills.ts",
+                "tsConfig": "apps/bootstrap-sample/tsconfig.app.json",
+                "assets": [
+                    "apps/bootstrap-sample/src/favicon.ico",
+                    "apps/bootstrap-sample/src/assets"
+                ],
+                "styles": ["apps/bootstrap-sample/src/styles.css",
+                    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+                ],
+                "scripts": ["node_modules/jquery/dist/jquery.slim.js",
+                    "node_modules/popper.js/dist/popper.min.js"
+                ]
+            },
+            "configurations": {
+                "production": {
+                    "budgets": [{
+                            "type": "initial",
+                            "maximumWarning": "500kb",
+                            "maximumError": "1mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "2kb",
+                            "maximumError": "4kb"
+                        }
+                    ],
+                    "fileReplacements": [{
+                        "replace": "apps/bootstrap-sample/src/environments/environment.ts",
+                        "with": "apps/bootstrap-sample/src/environments/environment.prod.ts"
+                    }],
+                    "outputHashing": "all"
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+                "production": {
+                    "browserTarget": "bootstrap-sample:build:production"
+                },
+                "development": {
+                    "browserTarget": "bootstrap-sample:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "bootstrap-sample:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "apps/bootstrap-sample/src/**/*.ts",
+                    "apps/bootstrap-sample/src/**/*.html"
+                ]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/bootstrap-sample"],
+            "options": {
+                "jestConfig": "apps/bootstrap-sample/jest.config.js",
+                "passWithNoTests": true
+            },
+            "styles": ["apps/bootstrap-sample/src/styles.css",
+                "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": ["node_modules/jquery/dist/jquery.slim.js",
+                "node_modules/popper.js/dist/popper.min.js"
+            ]
+        }
+    },
+    "tags": []
+}
