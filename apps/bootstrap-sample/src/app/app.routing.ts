@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SampleUnoComponent } from './componentes/sample-uno/sample-uno.component';
-import { SampleDosComponent } from './componentes/sample-dos/sample-dos.component';
+import { DniComponent } from './componentes/dni/dni.component';
+import { ImcComponent } from './componentes/imc/imc.component';
 
 const routes: Routes = [
-  { path: 'sample-uno', component: SampleUnoComponent },
-  { path: 'sample-dos', component: SampleDosComponent }
+  { path: 'dni', component: DniComponent },
+  { path: 'imc', component: ImcComponent }
 
 ];
 

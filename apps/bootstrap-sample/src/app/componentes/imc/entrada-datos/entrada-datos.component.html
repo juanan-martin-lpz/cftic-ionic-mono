@@ -1,0 +1,14 @@
+<div class="contenedor center">
+    <h1>Calculo del I.M.C.</h1>
+    <div class="form">
+        <div class="field">
+            <label for="peso">Peso (Kg)</label>
+            <input class="form-control" [(ngModel)]="peso" type="number" name="peso" id="peso" (focus)="hideResults()" />
+        </div>
+        <div class="field">
+            <label for="altura">Altura (cm)</label>
+            <input class="form-control" [(ngModel)]="altura" type="number" name="altura" id="altura" (focus)="hideResults()" />
+        </div>
+        <button class="d-lg mt-4 btn btn-primary" (click)="calcularIMC()">Calcular</button>
+    </div>
+</div>

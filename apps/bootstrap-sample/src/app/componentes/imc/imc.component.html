@@ -1,0 +1,3 @@
+<angular-repo-entrada-datos (hideResultsEvent)="hide()" (showErrorEvent)="mshowError($event)" (resultadoEvent)="imcCalculado($event)"></angular-repo-entrada-datos>
+<angular-repo-resultados *ngIf="showResults" [resultado]="resultado"></angular-repo-resultados>
+<angular-repo-error *ngIf="ashowError" [errMessage]="errorMessage"></angular-repo-error>
