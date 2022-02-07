@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from '../../servicios/player.service';
 
 @Component({
   selector: 'rps-play-panel',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private playService: PlayerService) { }
 
   ngOnInit(): void {
+  }
+
+  play(): void  {
+    this.playService.resolve();
+
   }
 
 }

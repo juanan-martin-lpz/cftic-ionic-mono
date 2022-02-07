@@ -27,6 +27,8 @@ export class ButtonPanelComponent implements OnInit {
 
     this.selected = val;
 
+    this.playerSer.setPlayerPlay('human', this.selected);
+
     // Decorar el boton en el UI
 
     this.botones.forEach((el: ElementRef) => {
