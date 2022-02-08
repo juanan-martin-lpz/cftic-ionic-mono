@@ -1,6 +1,8 @@
 {
   "version": 1,
   "projects": {
+    "bootstrap-sample": "apps/bootstrap-sample",
+    "bootstrap-sample-e2e": "apps/bootstrap-sample-e2e",
     "imc": "apps/imc",
     "imc-e2e": "apps/imc-e2e",
     "myapp": "apps/myapp",

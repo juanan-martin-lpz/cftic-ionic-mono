@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +14,7 @@ import { EntradaDatosComponent } from './componentes/imc/entrada-datos/entrada-d
 import { ErrorComponent } from './componentes/imc/error/error.component';
 import { ImagenComponent } from './componentes/imc/imagen/imagen.component';
 import { ResultadosComponent } from './componentes/imc/resultados/resultados.component';
+import { RpsComponent } from './componentes/rps/rps.component';
 
 @NgModule({
   declarations: [AppComponent,
@@ -25,7 +25,8 @@ import { ResultadosComponent } from './componentes/imc/resultados/resultados.com
                 ImagenComponent,
                 ResultadosComponent,
                 SampleUnoComponent,
-                SampleDosComponent],
+                SampleDosComponent,
+                RpsComponent],
   imports: [BrowserModule, FormsModule, LayoutModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

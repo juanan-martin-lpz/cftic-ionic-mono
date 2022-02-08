@@ -94,3 +94,97 @@ img {
     border-radius: 50%;
     border: 2px solid transparent;
 }
+
+.titulo-juego {
+    text-align: center;
+    padding: 2.5rem 0 2.5rem 0;
+}
+
+.botones,
+.contenedor {
+    display: flex;
+    width: 900px;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.botones-p {
+    display: flex;
+    width: 1000px;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.boton {
+    width: 300px;
+    transition: transform 1.5s;
+    cursor: pointer;
+}
+
+.boton-p {
+    width: 200px;
+}
+
+.boton:hover {
+    transform: scale(1.2);
+}
+
+.boton img {
+    width: 100%;
+}
+
+.boton-p img {
+    width: 100%;
+}
+
+.marcada {
+    border: 2px solid blueviolet;
+}
+
+.button-play {
+    margin: 0 auto;
+    width: 12rem;
+    height: 6rem;
+    font-size: 24px;
+    background-color: green;
+    color: whitesmoke;
+    border: 2px solid green;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-reset {
+    margin: 0 auto;
+    width: 14rem;
+    height: 6rem;
+    font-size: 24px;
+    background-color: red;
+    color: whitesmoke;
+    border: 2px solid red;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-play:disabled {
+    background-color: grey;
+    border: 2px solid black;
+}
+
+.contenedor {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.resultado {
+    font-size: 38px;
+    color: whitesmoke;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: repeat(4, 2rem);
+}
+
+.resultado .marcador {
+    margin-top: 3rem;
+}
