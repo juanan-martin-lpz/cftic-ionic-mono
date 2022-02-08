@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Marcador } from './tipos';
+import { Marcador, IMarcador } from './tipos';
 
 @Component({
   selector: 'angular-monorepo-rps',
@@ -30,13 +30,21 @@ export class RpsComponent implements OnInit {
       [-1, 1, 0]
     ];
 
-    public marcador: Marcador;
+    public marcador: IMarcador;
 
   constructor() {
-    this.selected = false;
-    this.marcador = new Marcador();
 
-  }
+      this.selected = false;
+
+      this.marcador = new Marcador();
+
+      let j: any = localStorage.getItem("jugador") || "";
+      let c: any = localStorage.getItem("computer") || "";
+
+      j != null ? this.marcador.jugador = parseInt(j) || 0 : this.marcador.jugador = 0;
+      c != null ? this.marcador.computer = parseInt(c) || 0: this.marcador.computer = 0;
+
+    }
 
   ngOnInit(): void {
   }
@@ -127,6 +135,10 @@ export class RpsComponent implements OnInit {
           this.resultado = result;
 
           localStorage.removeItem("selected");
+
+          localStorage.setItem("jugador", this.marcador.jugador.toString());
+          localStorage.setItem("computer", this.marcador.computer.toString());
+
           this.selected = false;
           this.decorateSelectedPlay(-2);
       }
@@ -144,5 +156,9 @@ export class RpsComponent implements OnInit {
     }
 
     this.marcador.reset();
+
+    localStorage.setItem("jugador", this.marcador.jugador.toString());
+    localStorage.setItem("computer", this.marcador.computer.toString());
+
   }
 }
