@@ -30,7 +30,7 @@ export class RpsComponent implements OnInit {
       [-1, 1, 0]
     ];
 
-    public marcador: IMarcador;
+    public marcador: Marcador;
 
   constructor() {
 
@@ -38,12 +38,14 @@ export class RpsComponent implements OnInit {
 
       this.marcador = new Marcador();
 
-      let j: any = localStorage.getItem("jugador") || "";
-      let c: any = localStorage.getItem("computer") || "";
+      const marcadorStr = localStorage.getItem("marcador") || "";
 
-      j != null ? this.marcador.jugador = parseInt(j) || 0 : this.marcador.jugador = 0;
-      c != null ? this.marcador.computer = parseInt(c) || 0: this.marcador.computer = 0;
-
+      try {
+        this.marcador = new Marcador(<IMarcador> JSON.parse(marcadorStr));
+      }
+      catch {
+        this.marcador = new Marcador();
+      }
     }
 
   ngOnInit(): void {
@@ -136,8 +138,9 @@ export class RpsComponent implements OnInit {
 
           localStorage.removeItem("selected");
 
-          localStorage.setItem("jugador", this.marcador.jugador.toString());
-          localStorage.setItem("computer", this.marcador.computer.toString());
+          let parsed = JSON.stringify(this.marcador);
+
+          localStorage.setItem("marcador", parsed);
 
           this.selected = false;
           this.decorateSelectedPlay(-2);
@@ -156,6 +159,10 @@ export class RpsComponent implements OnInit {
     }
 
     this.marcador.reset();
+
+    let parsed = JSON.stringify(this.marcador);
+    localStorage.setItem("marcador", parsed);
+
 
     localStorage.setItem("jugador", this.marcador.jugador.toString());
     localStorage.setItem("computer", this.marcador.computer.toString());
