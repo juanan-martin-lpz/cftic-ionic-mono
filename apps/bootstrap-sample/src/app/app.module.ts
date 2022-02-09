@@ -15,6 +15,8 @@ import { ErrorComponent } from './componentes/imc/error/error.component';
 import { ImagenComponent } from './componentes/imc/imagen/imagen.component';
 import { ResultadosComponent } from './componentes/imc/resultados/resultados.component';
 import { RpsComponent } from './componentes/rps/rps.component';
+import { AlumnosModule } from './alumnos/alumnos.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent,
@@ -27,7 +29,7 @@ import { RpsComponent } from './componentes/rps/rps.component';
                 SampleUnoComponent,
                 SampleDosComponent,
                 RpsComponent],
-  imports: [BrowserModule, FormsModule, LayoutModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, LayoutModule, AppRoutingModule, AlumnosModule],
   providers: [],
   bootstrap: [AppComponent],
 })
