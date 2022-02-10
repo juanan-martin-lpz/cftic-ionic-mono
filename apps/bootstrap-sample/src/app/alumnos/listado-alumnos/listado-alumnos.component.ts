@@ -12,6 +12,7 @@ export class ListadoAlumnosComponent implements OnInit {
   public lista_alumnos: IAlumno[];
 
   constructor(private alumnoService: AlumnoService) {
+
     this.lista_alumnos = [];
 
     this.alumnoService.obtenerAlumnos().subscribe(lista => this.lista_alumnos = lista);

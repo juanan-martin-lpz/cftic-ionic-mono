@@ -188,3 +188,62 @@ img {
 .resultado .marcador {
     margin-top: 3rem;
 }
+
+.contenedor-ancho {
+    width: 1000px;
+}
+
+.contenedor-ancho h2 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+table {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+td:nth-child(1) {
+    width: 5rem;
+    text-align: center;
+}
+
+td:nth-child(2) {
+    width: 8rem;
+    text-align: center;
+}
+
+td:nth-child(3) {
+    width: 8rem;
+    text-align: center;
+}
+
+td:nth-child(4) {
+    width: 5rem;
+    text-align: center;
+}
+
+td:nth-child(5) {
+    width: 14rem;
+    text-align: center;
+}
+
+.table-header td {
+    border: 2px solid black;
+}
+
+thead tr {
+    background-color: silver;
+}
+
+.table-body td {
+    border: 2px solid black;
+}
+
+.table-body tr:nth-child(odd) {
+    background-color: lightsteelblue;
+}
+
+.table-body tr:nth-child(even) {
+    background-color: lemonchiffon;
+}

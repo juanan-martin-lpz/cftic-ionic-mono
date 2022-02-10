@@ -3,18 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { DniComponent } from './componentes/dni/dni.component';
 import { ImcComponent } from './componentes/imc/imc.component';
 import { RpsComponent } from './componentes/rps/rps.component';
-import { ListadoAlumnosComponent } from './alumnos/listado-alumnos/listado-alumnos.component';
-import { AlumnosModule } from './alumnos/alumnos.module';
+import { AlumnosComponent } from './alumnos/alumnos.component';
 
 const routes: Routes = [
   { path: 'dni', component: DniComponent },
   { path: 'imc', component: ImcComponent },
   { path: 'rps', component: RpsComponent },
-  { path: 'alumnos', component: ListadoAlumnosComponent }
+  { path: 'alumnos', component: AlumnosComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), AlumnosModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
