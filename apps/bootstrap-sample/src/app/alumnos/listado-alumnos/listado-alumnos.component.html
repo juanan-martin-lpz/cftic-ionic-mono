@@ -1,6 +1,9 @@
 <div class="center contenedor-ancho">
 
-    <h2>Todos los Alumnos</h2>
+    <h3>Todos los Alumnos</h3>
+
+    <a [routerLink]="['/alumnos/new']" class="btn btn-primary">Nuevo</a>
+
     <table>
         <thead>
             <tr class="table-header">
@@ -9,6 +12,8 @@
                 <td>Apellido</td>
                 <td>Edad</td>
                 <td>Creado</td>
+                <td>&nbsp;</td>
+
             </tr>
         </thead>
         <tbody class="table-body">
@@ -18,6 +23,10 @@
                 <td>{{alumno.apellido}}</td>
                 <td>{{alumno.edad}}</td>
                 <td>{{alumno.creadoEn | date: 'medium'}}</td>
+                <td>
+                    <a [routerLink]="['/alumnos/edit', alumno.id]" class="btn btn-primary">Editar</a>
+                    <button class="btn btn-danger" (click)="borrar(alumno.id)">Borrar</button>
+                </td>
             </tr>
         </tbody>
     </table>

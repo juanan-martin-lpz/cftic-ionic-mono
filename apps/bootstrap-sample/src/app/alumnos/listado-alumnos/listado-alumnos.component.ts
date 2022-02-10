@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IAlumno } from '../../models/ialumno';
 import { AlumnoService } from '../../servicios/alumno.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'angular-monorepo-listado-alumnos',
@@ -11,7 +12,7 @@ export class ListadoAlumnosComponent implements OnInit {
 
   public lista_alumnos: IAlumno[];
 
-  constructor(private alumnoService: AlumnoService) {
+  constructor(private alumnoService: AlumnoService, private router: Router) {
 
     this.lista_alumnos = [];
 
@@ -19,6 +20,14 @@ export class ListadoAlumnosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+
+  borrar(id: number): void {
+    this.alumnoService.borrarAlumno(id).subscribe();
+
+    this.router.navigateByUrl('/alumnos');
+
   }
 
 }

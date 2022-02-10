@@ -193,7 +193,7 @@ img {
     width: 1000px;
 }
 
-.contenedor-ancho h2 {
+.contenedor-ancho h3 {
     text-align: center;
     margin-top: 2rem;
 }
@@ -246,4 +246,8 @@ thead tr {
 
 .table-body tr:nth-child(even) {
     background-color: lemonchiffon;
+}
+
+td a {
+    margin: 2px 5px 2px 5px;
 }
