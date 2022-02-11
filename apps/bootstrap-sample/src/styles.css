@@ -198,6 +198,11 @@ img {
     margin-top: 2rem;
 }
 
+.contenedor-form {
+    width: 800px;
+    padding: 5rem 0 0 5rem;
+}
+
 table {
     margin-top: 2rem;
     width: 100%;
@@ -250,4 +255,12 @@ thead tr {
 
 td a {
     margin: 2px 5px 2px 5px;
+}
+
+.botonera {
+    padding-top: 1rem;
+}
+
+.botonera button {
+    margin-right: 1rem;
 }

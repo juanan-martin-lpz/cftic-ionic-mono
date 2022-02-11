@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NumberValueAccessor } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlumnoService } from '../../servicios/alumno.service';
 import { IAlumno } from '../../models/ialumno';
-import { AlumnosRoutingModule } from '../alumnos.routing';
+import { Alumno } from '../../models/alumno';
 
 @Component({
   selector: 'angular-monorepo-form-alumno',
@@ -13,14 +12,23 @@ import { AlumnosRoutingModule } from '../alumnos.routing';
 export class FormAlumnoComponent implements OnInit {
 
   private id: number;
-  public alumno!: IAlumno;
+  public alumno: IAlumno;
 
   constructor(private router: Router, private route: ActivatedRoute, private alumnoService: AlumnoService) {
+
     this.id = 0;
+    this.alumno = new Alumno();
 
-    this.route.queryParams.subscribe(params => this.id = params['id']);
+    const id = this.route.snapshot.paramMap.get('id') || 0;
 
-    this.alumnoService.editarAlumno(this.id).subscribe(alumno => this.alumno = alumno);
+    if (id) {
+      this.id = +id;
+    }
+
+    this.alumnoService.obtenerAlumnoPorId(this.id).subscribe(alumno => {
+      this.alumno = alumno;
+    });
+
 
   }
 
@@ -28,4 +36,23 @@ export class FormAlumnoComponent implements OnInit {
 
   }
 
+  guardar() {
+
+    this.alumnoService.modificarAlumno(this.alumno).subscribe(
+      {
+        complete: () => {
+          this.router.navigateByUrl('/alumno');
+        },
+        error: (e) => {
+          // Gestion del error
+        }
+      }
+    )
+  }
+
+  cancelar() {
+    // Nos vamos
+    this.router.navigateByUrl('/alumnos');
+    //
+  }
 }

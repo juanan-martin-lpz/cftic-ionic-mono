@@ -1,8 +1,30 @@
-<div class="center container-ancho">
-    <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+<div class="center contenedor-form">
+    <div class="form-group row  mb-2">
+        <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="alumno.nombre" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
         </div>
+    </div>
+    <div class="form-group row mb-2">
+        <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="alumno.apellido" class="form-control" id="apellido" name="apellido" placeholder="Apellidos">
+        </div>
+    </div>
+    <div class="form-group row  mb-2">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="alumno.email" class="form-control" id="email" name="email" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group row  mb-2">
+        <label for="edad" class="col-sm-2 col-form-label">Edad</label>
+        <div class="col-sm-5">
+            <input type="number" [(ngModel)]="alumno.edad" class="form-control" id="edad" nasme="edad" placeholder="Edad">
+        </div>
+    </div>
+    <div class="form-group mb-2 botonera">
+        <button class="btn btn-primary" (click)="guardar()">Guardar</button>
+        <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
     </div>
 </div>

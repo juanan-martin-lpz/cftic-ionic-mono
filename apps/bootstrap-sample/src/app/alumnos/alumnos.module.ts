@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 //import { BrowserModule } from '@angular/platform-browser';
-//import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ListadoAlumnosComponent } from './listado-alumnos/listado-alumnos.component';
 import { AlumnosComponent } from './alumnos.component';
@@ -14,7 +14,7 @@ import { FormAlumnoComponent } from './form-alumno/form-alumno.component';
   AlumnosComponent, ListadoAlumnosComponent, FormAlumnoComponent
   ],
   imports: [
-    CommonModule, /* FormsModule, BrowserModule,*/ AlumnosRoutingModule
+    CommonModule, FormsModule, AlumnosRoutingModule
   ]
 })
 export class AlumnosModule { }

@@ -8,22 +8,34 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AlumnoService {
 
+  private readonly REMOTE_SERVER = 'http://10.1.2.10:3000';
+  private readonly LOCAL_SERVER = 'http://localhost:3000';
+  private CURRENT_SERVER = '';
+
 
   constructor(private http: HttpClient) {
-
+    this.CURRENT_SERVER = this.LOCAL_SERVER;
   }
 
   obtenerAlumnos(): Observable<IAlumno[]> {
 
-    return this.http.get<IAlumno[]>('http://10.1.2.10:8085/').pipe(
+    return this.http.get<IAlumno[]>(`${this.CURRENT_SERVER}/alumno`).pipe(
       tap(console.log)
     );
 
   }
 
-  editarAlumno(id: number): Observable<IAlumno> {
+  obtenerAlumnoPorId(id: number): Observable<IAlumno> {
 
-    return this.http.get<IAlumno>('http://10.1.2.10:8085/' + id.toString()).pipe(
+    return this.http.get<IAlumno>(`${this.CURRENT_SERVER}/alumno/` + id.toString()).pipe(
+      tap(console.log)
+    );
+
+  }
+
+  modificarAlumno(alumno: IAlumno): Observable<void> {
+
+    return this.http.put<void>(`${this.CURRENT_SERVER}/alumno`, alumno).pipe(
       tap(console.log)
     );
 
@@ -31,7 +43,7 @@ export class AlumnoService {
 
   borrarAlumno(id: number): Observable<void> {
 
-    return this.http.delete<void>('http://10.1.2.10:8085/' + id.toString()).pipe(
+    return this.http.delete<void>(`${this.CURRENT_SERVER}/alumno/` + id.toString()).pipe(
       tap(console.log)
     );
 
