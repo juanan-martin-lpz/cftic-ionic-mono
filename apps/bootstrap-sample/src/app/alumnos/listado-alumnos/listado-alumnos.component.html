@@ -2,10 +2,13 @@
 
     <h3>Todos los Alumnos</h3>
 
-    <div class="form-check">
+    <div class="form-check mb-5">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [checked]="automatico" (click)="autoclick()">
-        <label class="form-check-label" for="flexCheckDefault">
+        <label *ngIf="!actualizando" class="form-check-label" for="flexCheckDefault">
         Actualizar de forma automatica
+      </label>
+        <label *ngIf="actualizando" class="form-check-label" for="flexCheckDefault">
+        Actualizando....
       </label>
     </div>
 

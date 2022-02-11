@@ -13,6 +13,8 @@ export class ListadoAlumnosComponent implements OnInit {
   public lista_alumnos: IAlumno[];
 
   public automatico: boolean;
+  public actualizando: boolean;
+
 
   private interval: any;
 
@@ -23,6 +25,7 @@ export class ListadoAlumnosComponent implements OnInit {
     this.alumnoService.obtenerAlumnos().subscribe(lista => this.lista_alumnos = lista);
 
     this.automatico = false;
+    this.actualizando = false;
 
   }
 
@@ -37,14 +40,31 @@ export class ListadoAlumnosComponent implements OnInit {
 
   }
 
+  getAlumno() {
+
+    this.alumnoService.obtenerAlumnos().subscribe(lista => {
+      this.lista_alumnos = lista;
+      this.actualizando = false;
+    });
+  }
+
   autoclick() {
 
     this.automatico = !this.automatico;
 
     if (this.automatico) {
+
       this.interval = setInterval(() => {
-        this.alumnoService.obtenerAlumnos().subscribe(lista => this.lista_alumnos = lista);
-      }, 1000);
+        this.actualizando = true;
+        this.alumnoService.obtenerAlumnos().subscribe(lista => {
+          this.lista_alumnos = lista;
+          this.actualizando = false;
+        });
+      }, 3000);
+
+      // version alternativa con funcion regular
+      //this.interval = setInterval(this.getAlumno.bind(this), 3000);
+
     }
     else {
       clearInterval(this.interval);
