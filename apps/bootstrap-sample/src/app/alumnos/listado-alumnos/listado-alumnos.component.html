@@ -2,6 +2,13 @@
 
     <h3>Todos los Alumnos</h3>
 
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [checked]="automatico" (click)="autoclick()">
+        <label class="form-check-label" for="flexCheckDefault">
+        Actualizar de forma automatica
+      </label>
+    </div>
+
     <a [routerLink]="['/alumnos/new']" class="btn btn-primary">Nuevo</a>
 
     <table>

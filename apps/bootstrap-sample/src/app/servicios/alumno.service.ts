@@ -14,7 +14,7 @@ export class AlumnoService {
 
 
   constructor(private http: HttpClient) {
-    this.CURRENT_SERVER = this.LOCAL_SERVER;
+    this.CURRENT_SERVER = this.REMOTE_SERVER;
   }
 
   obtenerAlumnos(): Observable<IAlumno[]> {

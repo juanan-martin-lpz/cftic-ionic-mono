@@ -12,11 +12,18 @@ export class ListadoAlumnosComponent implements OnInit {
 
   public lista_alumnos: IAlumno[];
 
+  public automatico: boolean;
+
+  private interval: any;
+
   constructor(private alumnoService: AlumnoService, private router: Router) {
 
     this.lista_alumnos = [];
 
     this.alumnoService.obtenerAlumnos().subscribe(lista => this.lista_alumnos = lista);
+
+    this.automatico = false;
+
   }
 
   ngOnInit(): void {
@@ -28,6 +35,20 @@ export class ListadoAlumnosComponent implements OnInit {
 
     this.router.navigateByUrl('/alumnos');
 
+  }
+
+  autoclick() {
+
+    this.automatico = !this.automatico;
+
+    if (this.automatico) {
+      this.interval = setInterval(() => {
+        this.alumnoService.obtenerAlumnos().subscribe(lista => this.lista_alumnos = lista);
+      }, 1000);
+    }
+    else {
+      clearInterval(this.interval);
+    }
   }
 
 }
