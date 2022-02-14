@@ -13,11 +13,14 @@ export class FormAlumnoComponent implements OnInit {
 
   private id: number;
   public alumno: IAlumno;
+  private nuevo: boolean;
 
   constructor(private router: Router, private route: ActivatedRoute, private alumnoService: AlumnoService) {
 
     this.id = 0;
     this.alumno = new Alumno();
+
+    this.nuevo = true;
 
     const id = this.route.snapshot.paramMap.get('id') || 0;
 
@@ -25,9 +28,12 @@ export class FormAlumnoComponent implements OnInit {
       this.id = +id;
     }
 
-    this.alumnoService.obtenerAlumnoPorId(this.id).subscribe(alumno => {
-      this.alumno = alumno;
-    });
+    if (this.id > 0) {
+      this.nuevo = false;
+      this.alumnoService.obtenerAlumnoPorId(this.id).subscribe(alumno => {
+        this.alumno = alumno;
+      });
+    }
 
 
   }
@@ -38,16 +44,30 @@ export class FormAlumnoComponent implements OnInit {
 
   guardar() {
 
-    this.alumnoService.modificarAlumno(this.alumno).subscribe(
-      {
-        complete: () => {
-          this.router.navigateByUrl('/alumno');
-        },
-        error: (e) => {
-          // Gestion del error
+    if (!this.nuevo) {
+      this.alumnoService.modificarAlumno(this.alumno).subscribe(
+        {
+          complete: () => {
+            this.router.navigateByUrl('/alumnos');
+          },
+          error: (e) => {
+            // Gestion del error
+          }
         }
-      }
-    )
+      )
+    }
+    else {
+      this.alumnoService.nuevoAlumno(this.alumno).subscribe(
+        {
+          complete: () => {
+            this.router.navigateByUrl('/alumnos');
+          },
+          error: (e) => {
+            // Gestion del error
+          }
+        }
+      )
+    }
   }
 
   cancelar() {

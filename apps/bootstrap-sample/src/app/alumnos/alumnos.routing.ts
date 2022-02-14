@@ -5,7 +5,8 @@ import { FormAlumnoComponent } from './form-alumno/form-alumno.component';
 
 const routes: Routes = [
   { path: '', component: ListadoAlumnosComponent },
-  { path: 'edit/:id', component: FormAlumnoComponent }
+  { path: 'edit/:id', component: FormAlumnoComponent },
+  { path: 'new', component: FormAlumnoComponent }
 ];
 
 @NgModule({
