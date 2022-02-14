@@ -264,3 +264,33 @@ td a {
 .botonera button {
     margin-right: 1rem;
 }
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 350px;
+    flex-basis: 200px;
+    min-width: 200px;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+
+.card img {
+    width: 100%;
+}
+
+.userdata div {
+    border: 1px solid grey;
+    font-size: 24px;
+}
+
+.round {
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.userdata {}
