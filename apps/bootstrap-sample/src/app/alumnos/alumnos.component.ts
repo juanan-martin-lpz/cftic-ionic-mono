@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'angular-monorepo-alumnos',
   templateUrl: './alumnos.component.html',
@@ -7,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlumnosComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
