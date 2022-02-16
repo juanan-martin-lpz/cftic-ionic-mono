@@ -51,6 +51,7 @@ export class FormAlumnoComponent implements OnInit {
             this.router.navigateByUrl('/alumnos');
           },
           error: (e) => {
+            console.log(e);
             // Gestion del error
           }
         }
@@ -64,6 +65,7 @@ export class FormAlumnoComponent implements OnInit {
           },
           error: (e) => {
             // Gestion del error
+            console.log(e);
           }
         }
       )

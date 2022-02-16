@@ -12,14 +12,14 @@ export class AlumnoService {
   private readonly LOCAL_SERVER = 'http://localhost:3000';
   private CURRENT_SERVER = '';
 
-  private headers: HttpHeaders;
+  private headers: HttpHeaders = new HttpHeaders({"Content-type": "application/json"});
 
 
   constructor(private http: HttpClient) {
     this.CURRENT_SERVER = this.REMOTE_SERVER;
 
-    this.headers = new HttpHeaders();
-    this.headers.append("Content-type", "application/json");
+    //this.headers = new HttpHeaders({"Content-type": "application/json"});
+    //this.headers.set("Content-type", "application/json");
   }
 
   obtenerAlumnos(): Observable<IAlumno[]> {
@@ -40,7 +40,9 @@ export class AlumnoService {
 
   modificarAlumno(alumno: IAlumno): Observable<void> {
 
-    return this.http.put<void>(`${this.CURRENT_SERVER}/alumno`, alumno).pipe(
+    console.log(this.headers);
+
+    return this.http.put<IAlumno>(`${this.CURRENT_SERVER}/alumno/${alumno.id}`, alumno, { headers: this.headers }).pipe(
       tap(console.log)
     );
 
@@ -48,7 +50,7 @@ export class AlumnoService {
 
   nuevoAlumno(alumno: IAlumno): Observable<IAlumno> {
 
-    return this.http.post<IAlumno>(`${this.CURRENT_SERVER}/alumno`, alumno).pipe(
+    return this.http.post<IAlumno>(`${this.CURRENT_SERVER}/alumno`, alumno, { headers: this.headers }).pipe(
       tap(console.log)
     );
 
