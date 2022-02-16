@@ -3,6 +3,10 @@
   Faltan las validaciones de cada campo
 
 -->
+<div class="center">
+    <h2 class="center" *ngIf="nuevo">Nuevo Alumno</h2>
+    <h2 class="center" *ngIf="!nuevo">Editar Alumno</h2>
+</div>
 
 <form #form="ngForm" (submit)="guardar()">
     <div class="center contenedor-form">

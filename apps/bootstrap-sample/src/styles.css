@@ -298,4 +298,7 @@ td a {
     border: 1px solid black;
 }
 
-.userdata {}
+.center h2 {
+    text-align: center;
+    margin-top: 3rem;
+}

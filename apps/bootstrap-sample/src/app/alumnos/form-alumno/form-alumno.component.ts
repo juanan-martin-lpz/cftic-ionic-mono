@@ -13,7 +13,7 @@ export class FormAlumnoComponent implements OnInit {
 
   private id: number;
   public alumno: IAlumno;
-  private nuevo: boolean;
+  public nuevo: boolean;
 
   constructor(private router: Router, private route: ActivatedRoute, private alumnoService: AlumnoService) {
 
