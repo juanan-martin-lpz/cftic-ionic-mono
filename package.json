@@ -22,6 +22,7 @@
     "@ionic/angular": "^6.0.7",
     "@nrwl/angular": "13.7.2",
     "bootstrap": "^5.1.3",
+    "bs-custom-file-input": "^1.3.4",
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "ngx-moment": "^6.0.2",
