@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
 
   Faltan las validaciones de cada campo
@@ -15,28 +16,45 @@
             <div class="col-sm-5">
                 <input type="text" #nombre="ngModel" [(ngModel)]="alumno.nombre" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
             </div>
-        </div>
-        <div class="form-group row mb-2">
-            <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
-            <div class="col-sm-5">
-                <input type="text" #apellido="ngModel" [(ngModel)]="alumno.apellido" class="form-control" id="apellido" name="apellido" placeholder="Apellidos">
-            </div>
-        </div>
-        <div class="form-group row  mb-2">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-5">
-                <input type="text" #email="ngModel" [(ngModel)]="alumno.email" class="form-control" id="email" name="email" placeholder="Email">
-            </div>
-        </div>
-        <div class="form-group row  mb-2">
-            <label for="edad" class="col-sm-2 col-form-label">Edad</label>
-            <div class="col-sm-5">
-                <input type="number" #edad="ngModel" [(ngModel)]="alumno.edad" class="form-control" id="edad" name="edad" placeholder="Edad">
-            </div>
-        </div>
-        <div class="form-group mb-2 botonera">
-            <input type="submit" class="btn btn-primary" value="Guardar">
-            <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+=======
+<div class="center contenedor-form">
+    <div class="form-group row  mb-2">
+        <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="alumno.nombre" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+>>>>>>> alumnos
         </div>
     </div>
+    <div class="form-group row mb-2">
+        <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="alumno.apellido" class="form-control" id="apellido" name="apellido" placeholder="Apellidos">
+        </div>
+    </div>
+    <div class="form-group row  mb-2">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="alumno.email" class="form-control" id="email" name="email" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group row  mb-2">
+        <label for="edad" class="col-sm-2 col-form-label">Edad</label>
+        <div class="col-sm-5">
+            <input type="number" [(ngModel)]="alumno.edad" class="form-control" id="edad" nasme="edad" placeholder="Edad">
+        </div>
+    </div>
+    <div class="form-group row  mb-2">
+        <div class="custom-file">
+            <input (change)="seleccionImagen($event)" type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile" data-browse="Elegir">Selecciona Imagen</label>
+        </div>
+    </div>
+<<<<<<< HEAD
 </form>
+=======
+    <div class="form-group mb-2 botonera">
+        <button class="btn btn-primary" (click)="guardar()">Guardar</button>
+        <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+    </div>
+</div>
+>>>>>>> alumnos
