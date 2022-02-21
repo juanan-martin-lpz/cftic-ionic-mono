@@ -48,6 +48,21 @@ export class FormAlumnoComponent implements OnInit {
     this.alumnoService.modificarAlumno(this.alumno).subscribe(
       {
         complete: () => {
+
+          if (this.imagen !== undefined) {
+            /*
+            this.postService.uploadImage(this.thePost._id, this.imagen).then(resp => {
+              this.router.navigate(['/blog']);
+            })
+            .catch(err => {
+
+              console.log(err);
+              this.router.navigate(['/blog']);
+
+            });
+            */
+          }
+
           this.router.navigateByUrl('/alumno');
         },
         error: (e) => {
