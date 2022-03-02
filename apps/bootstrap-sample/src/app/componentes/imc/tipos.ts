@@ -25,6 +25,17 @@ export interface Resultado {
   tipologia: Tipologia;
 }
 
+export interface ResultadoTrack {
+
+  imcAvg: number;
+
+  desnutrido: number;
+  delgado: number;
+  ideal: number;
+  sobrepeso: number;
+  obeso: number;
+
+}
 export class Imc {
   public imc: number;
   public tipologia: Tipologia;

@@ -15,13 +15,10 @@ export class FormAlumnoComponent implements OnInit {
 
   private id: number;
   public alumno: IAlumno;
-<<<<<<< HEAD
   public nuevo: boolean;
-=======
 
   public imagen?: File;
   public imagenTemp?: string;
->>>>>>> alumnos
 
   constructor(private router: Router, private route: ActivatedRoute, private alumnoService: AlumnoService) {
 
@@ -49,7 +46,6 @@ export class FormAlumnoComponent implements OnInit {
 
   guardar() {
 
-<<<<<<< HEAD
     if (!this.nuevo) {
       this.alumnoService.modificarAlumno(this.alumno).subscribe(
         {
@@ -65,40 +61,16 @@ export class FormAlumnoComponent implements OnInit {
     }
     else {
       this.alumnoService.nuevoAlumno(this.alumno).subscribe(
-        {
+      {
           complete: () => {
             this.router.navigateByUrl('/alumnos');
           },
           error: (e) => {
             // Gestion del error
             console.log(e);
-=======
-    this.alumnoService.modificarAlumno(this.alumno).subscribe(
-      {
-        complete: () => {
-
-          if (this.imagen !== undefined) {
-            /*
-            this.postService.uploadImage(this.thePost._id, this.imagen).then(resp => {
-              this.router.navigate(['/blog']);
-            })
-            .catch(err => {
-
-              console.log(err);
-              this.router.navigate(['/blog']);
-
-            });
-            */
->>>>>>> alumnos
           }
-
-          this.router.navigateByUrl('/alumno');
-        },
-        error: (e) => {
-          // Gestion del error
         }
-      }
-    )
+      });
   }
 
   cancelar() {

@@ -8,6 +8,7 @@ import { AlumnosRoutingModule } from './alumnos.routing';
 import { FormAlumnoComponent } from './form-alumno/form-alumno.component';
 import { MomentModule } from 'ngx-moment';
 import 'moment/locale/es';
+import { AlumnoService } from '../servicios/alumno.service';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import 'moment/locale/es';
   ],
   imports: [
     CommonModule, FormsModule, AlumnosRoutingModule, MomentModule
-  ]
+  ],
+  providers: [AlumnoService]
 })
 export class AlumnosModule { }

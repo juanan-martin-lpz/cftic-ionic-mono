@@ -3,9 +3,7 @@ import { Observable, tap } from 'rxjs';
 import { IAlumno } from '../models/ialumno';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AlumnoService {
 
   private readonly REMOTE_SERVER = 'http://10.1.2.10:3000';
